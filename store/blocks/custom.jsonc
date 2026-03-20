@@ -1,0 +1,9 @@
+{
+  "store.custom#lead-form-container": {
+    "blocks": ["lead-form"]
+  },
+
+  "lead-form": {
+    "title": "Lead Form"
+  }
+}
