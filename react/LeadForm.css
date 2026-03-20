@@ -1,4 +1,4 @@
-.leadFormContainer {
+.leadFormContainer, .leadFormSuccess {
     width: 640px;
     margin: 40px auto;
     padding: 40px;
@@ -28,11 +28,38 @@ form {
 
 label {
     color: #666;
+    display: flex;
 }
 
-input {
+input, select {
     height: 40px;
-    border: 1px solid #;
-    border-radius: 12px;
+    border: 2px solid #C9C9C9;
+    border-radius: 4px;
+    padding: 0 4px;
+}
 
+.checkbox {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 8px;
+}
+
+button {
+    height: 40px;
+    background-color: #FFDD56;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #FFF4CA;
+}
+
+span {
+    font-size: 16px;
+    color: #E33939;
 }

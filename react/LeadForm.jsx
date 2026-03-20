@@ -16,17 +16,17 @@ const LeadForm = () => {
   const [apiError, setApiError] = useState('')
 
   const validate = () => {
-    console.log("entrei")
+
     const newErrors = {}
 
     if (!formData.firstName.trim()) {
-      newErrors.firstName = 'Não é obrigatório'
+      newErrors.firstName = 'O nome é obrigatório'
     } else if (formData.firstName.lenght > 50) {
       newErrors.firstName = "Máximo 50 caracteres"
     }
 
     if (!formData.lastName.trim()) {
-      newErrors.lastName = 'Sobrenome é obrigatório'
+      newErrors.lastName = 'O Sobrenome é obrigatório'
     } else if (formData.lastName.length > 50) {
       newErrors.lastName = 'Máximo 50 caracteres'
     }
@@ -37,7 +37,6 @@ const LeadForm = () => {
     } else if (!emailRegex.test(formData.email)) {
       newErrors.email = "E-mail inválido"
     }
-    console.log("NEWEErros",newErrors)
     setErrors(newErrors)
 
   
@@ -46,7 +45,6 @@ const LeadForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(formData)
 
     if (!validate()) return
 
@@ -59,8 +57,6 @@ const LeadForm = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       })
-
-      console.log(response)
 
       if (!response.ok) {
         throw new Error(`Erro ${response.status}`)
@@ -147,7 +143,7 @@ const LeadForm = () => {
         </div>
 
         <div className={styles.leadFormField}>
-          <label>
+          <label className={styles.checkbox}>
             <input className={styles.leadFormCheckbox}
               type="checkbox"
               checked={formData.optIn}
